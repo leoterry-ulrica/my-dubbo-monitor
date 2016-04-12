@@ -19,6 +19,7 @@ Dubbo Monitor是针对Dubbo开发的监控系统，基于dubbo-monitor-simple改
 
 >### 2016-04-12
 > 1. 添加缺失的依赖包：
+```xml
   <!--读取配置文件使用-->
   <dependency>
 	<groupId>com.github.subchen</groupId>
@@ -31,7 +32,7 @@ Dubbo Monitor是针对Dubbo开发的监控系统，基于dubbo-monitor-simple改
 	<artifactId>antlr4-runtime</artifactId>
 	<version>4.3</version>
   </dependency>
-  
+ ```
 > 2. 修改pom.xml依赖的dubbo版本：dubbos-3.0.1
 
 ## Dubbo Monitor使用帮助
