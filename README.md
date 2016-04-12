@@ -18,12 +18,12 @@ Dubbo Monitor是针对Dubbo开发的监控系统，基于dubbo-monitor-simple改
 > 1. 发布Dubbo Monitor for Relational Database版本1.0.0，版本分支为master。
 
 >### 2016-04-12
-> 1. 添加缺失的依赖包：
+> 1.添加缺失的依赖包：
 
 ```xml
   <!--读取配置文件使用-->
   <dependency>
-	<groupId>com.github.subchen</groupId>
+    <groupId>com.github.subchen</groupId>
 	<artifactId>jetbrick-commons</artifactId>
 	<version>2.1.1</version>
   </dependency>
@@ -35,7 +35,7 @@ Dubbo Monitor是针对Dubbo开发的监控系统，基于dubbo-monitor-simple改
   </dependency>
  ```
  
-> 2. 修改pom.xml依赖的dubbo版本：dubbos-3.0.1
+>2.修改pom.xml依赖的dubbo版本：dubbos-3.0.1
 
 ## Dubbo Monitor使用帮助
 
