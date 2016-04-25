@@ -35,7 +35,12 @@ Dubbo Monitor是针对Dubbo开发的监控系统，基于dubbo-monitor-simple改
   </dependency>
  ```
  
->2.修改pom.xml依赖的dubbo版本：dubbos-3.0.1
+>2. 升级pom.xml依赖的dubbo版本：
+   从dubbo.version：[2.8.4]升级为[3.0.1]（dubbos的版本）
+
+>### 2016-04-25
+> 1. 升级spring版本：
+   从spring.version：[3.2.9.RELEASE]升级为[4.2.5.RELEASE]
 
 ## Dubbo Monitor使用帮助
 
@@ -74,3 +79,8 @@ target文件夹下生成的dubbo-monitor.war即为项目部署文件，将其放
 ## 服务提供端配置
 
 [Dubbo服务提供端监控配置](http://dubbo.io/User+Guide-zh.htm#UserGuide-zh-%3Cdubbo%3Amonitor%2F%3E)
+
+## 注意事项
+>### 2016-04-25
+> 1.  建议采用war包进行启动项目，不要在IDE启动，否则有可能会遇到异常：
+    No bean named 'springSecurityFilterChain' is defined
