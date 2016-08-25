@@ -305,6 +305,14 @@
 			<artifactId>antlr4-runtime</artifactId>
 			<version>4.3</version>
 		</dependency>
+		
+		<!-- oracle jdbc driver -->
+			<dependency>
+				<groupId>com.oracle</groupId>
+				<artifactId>ojdbc6</artifactId>
+				<version>11.2.0.3</version>
+				<scope>runtime</scope>
+			</dependency>
 	</dependencies>
 
 	<build>

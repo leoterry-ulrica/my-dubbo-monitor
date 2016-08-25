@@ -43,7 +43,7 @@ public class SystemController {
     public String system(Model model) {
         List<String[]> rows = new ArrayList<String[]>();
 
-        rows.add(new String[]{"Version", "2.8.4"});
+        rows.add(new String[]{"Version", "3.0.1l;"});
 
         String address = NetUtils.getLocalHost();
         rows.add(new String[]{"Host", NetUtils.getHostName(address) + "/" + address});

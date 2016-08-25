@@ -21,6 +21,7 @@ import com.handu.open.dubbo.monitor.domain.DubboInvoke;
 import com.handu.open.dubbo.monitor.domain.DubboInvokeLineChart;
 import com.handu.open.dubbo.monitor.domain.LineChartSeries;
 import com.handu.open.dubbo.monitor.support.CommonResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -28,8 +29,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.text.ParsePosition;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -56,6 +61,23 @@ public class IndexController {
         return "index";
     }
 
+	private String toDateTimeStr(Date date) {
+		if (date != null) {
+			SimpleDateFormat formatter = new SimpleDateFormat("yyyy/mm/dd");
+			return formatter.format(date);
+		}
+		return "";
+	}
+	public Date strToDate(String dateStr) {
+
+		if(null == dateStr || "".equals(dateStr)) return null;
+		
+		//构造制定格式format的SimpleDateFormat对象。
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy/mm/dd");
+
+		//进行转换,这里要传入new ParsePosition(0)，否则是抛出异常，而不是返回null
+		return formatter.parse(dateStr, new ParsePosition(0));
+	}
     @ResponseBody
     @RequestMapping(value = "loadTopData")
     public CommonResponse loadTopDate(@ModelAttribute DubboInvoke dubboInvoke) {
@@ -66,6 +88,11 @@ public class IndexController {
         LineChartSeries slineChartSeries = new LineChartSeries();
         List<double[]> sdataList = Lists.newArrayList();
         double[] data;
+       
+   /*     dubboInvoke.setInvokeDate(this.strToDate(this.toDateTimeStr(dubboInvoke.getInvokeDate())));
+        dubboInvoke.setInvokeDateFrom(this.strToDate(this.toDateTimeStr(dubboInvoke.getInvokeDateFrom())));
+        dubboInvoke.setInvokeDateTo(this.strToDate(this.toDateTimeStr(dubboInvoke.getInvokeDateTo())));*/
+        
         Map dubboInvokeMap = dubboMonitorService.countDubboInvokeTopTen(dubboInvoke);
         List<DubboInvoke> success = (List<DubboInvoke>) dubboInvokeMap.get("success");
         for (DubboInvoke di : success) {
