@@ -41,6 +41,10 @@ Dubbo Monitor是针对Dubbo开发的监控系统，基于dubbo-monitor-simple改
 >### 2016-04-25
 > 1. 升级spring版本：
    从spring.version：[3.2.9.RELEASE]升级为[4.2.5.RELEASE]
+   
+>### 2016-08-25
+> 1. 添加对oracle的支持
+   包括数据模型和mybatis mapper
 
 ## Dubbo Monitor使用帮助
 
