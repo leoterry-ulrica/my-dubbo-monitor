@@ -45,6 +45,10 @@ Dubbo Monitor是针对Dubbo开发的监控系统，基于dubbo-monitor-simple改
 >### 2016-08-25
 > 1. 添加对oracle的支持
    包括数据模型和mybatis mapper
+   
+>### 2016-09-15
+> 1. 因为oracle默认情况不会对查询结果进行排序，所以需要显式进行排序（order by）
+    mysql默认进行排序。对应的mapper：countDubboInvoke
 
 ## Dubbo Monitor使用帮助
 

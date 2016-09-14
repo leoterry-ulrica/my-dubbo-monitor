@@ -61,13 +61,13 @@
         )
     </insert>
 
-    <select id="countDubboInvoke" parameterType="com.handu.open.dubbo.monitor.domain.DubboInvoke" resultType="com.handu.open.dubbo.monitor.domain.DubboInvoke">
+     <select id="countDubboInvoke" parameterType="com.handu.open.dubbo.monitor.domain.DubboInvoke" resultType="com.handu.open.dubbo.monitor.domain.DubboInvoke">
         SELECT
         dubbo_invoke.method,
         dubbo_invoke.type,
         SUM(dubbo_invoke.success) as success,
-        SUM(dubbo_invoke.elapsed) / SUM(dubbo_invoke.success) as elapsed,
-        TRUNC(dubbo_invoke.invoke_time, #{timeParticle}) * #{timeParticle} as invokeTime
+        SUM(dubbo_invoke.elapsed) / DECODE(SUM(dubbo_invoke.success),0,NULL,SUM(dubbo_invoke.success)) as elapsed,
+        TRUNC(dubbo_invoke.invoke_time/ #{timeParticle}) * #{timeParticle} as invokeTime
         FROM dubbo_invoke
 
         WHERE 1 = 1
@@ -97,6 +97,7 @@
             AND dubbo_invoke.type = #{type}
         </if>
         GROUP BY dubbo_invoke.method, dubbo_invoke.type,dubbo_invoke.invoke_time
+        ORDER BY invokeTime
     </select>
 
     <select id="countDubboInvokeInfo" parameterType="com.handu.open.dubbo.monitor.domain.DubboInvoke" resultType="com.handu.open.dubbo.monitor.domain.DubboInvoke">
@@ -113,10 +114,10 @@
             AND dubbo_invoke.invoke_date = TO_DATE(TO_CHAR(#{invokeDate},'yyyy/mm/dd'),'yyyy/mm/dd')
         </if>
         <if test="invokeDateFrom != null">
-            AND dubbo_invoke.invoke_date &gt;= TO_DATE(TO_CHAR(#{invokeDateFrom},'yyyy/mm/dd'),'yyyy/mm/dd')
+            AND TO_CHAR(dubbo_invoke.invoke_date,'YYYY/MM/DD') &gt;= TO_CHAR(#{invokeDateFrom},'YYYY/MM/DD')
         </if>
         <if test="invokeDateTo != null">
-            AND dubbo_invoke.invoke_date &lt;= TO_DATE(TO_CHAR(#{invokeDateTo},'yyyy/mm/dd'),'yyyy/mm/dd')
+            AND TO_CHAR(dubbo_invoke.invoke_date,'YYYY/MM/DD') &lt;= TO_CHAR(#{invokeDateTo},'YYYY/MM/DD')
         </if>
         <if test="service != null and service!= '' ">
             AND dubbo_invoke.service = #{service}
