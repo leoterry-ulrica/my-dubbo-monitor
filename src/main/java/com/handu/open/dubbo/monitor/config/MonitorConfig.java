@@ -30,6 +30,6 @@ import org.springframework.context.annotation.PropertySource;
 @ComponentScan(basePackages = {"com.handu.open.dubbo.monitor"}, includeFilters = {@ComponentScan.Filter(value = Service.class)})
 @Import({WebConfig.class, DubboConfig.class, MyBatisConfig.class, Security.class})
 //@PropertySource("classpath:/application.properties")
-@PropertySource("classpath:/application-orcl.properties")
+@PropertySource("classpath:/application.properties")
 public class MonitorConfig {
 }
