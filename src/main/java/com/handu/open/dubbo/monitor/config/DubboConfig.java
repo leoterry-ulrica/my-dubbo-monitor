@@ -33,6 +33,8 @@ import org.springframework.core.env.Environment;
 public class DubboConfig {
 
     private static final String REGISTRY_ADDRESS = "dubbo.registry.address";
+    private static final String REGISTRY_USERNAME = "dubbo.registry.username";
+    private static final String REGISTRY_PASSWORD = "dubbo.registry.password";
     private static final String APPLICATION_NAME = "dubbo.application.name";
     private static final String APPLICATION_OWNER = "dubbo.application.owner";
     private static final String PROTOCOL_PORT = "dubbo.protocol.port";
@@ -59,6 +61,8 @@ public class DubboConfig {
     public RegistryConfig registryConfig() {
         RegistryConfig registryConfig = new RegistryConfig();
         registryConfig.setAddress(env.getProperty(REGISTRY_ADDRESS));
+        registryConfig.setUsername(env.getProperty(REGISTRY_USERNAME));
+        registryConfig.setPassword(env.getProperty(REGISTRY_PASSWORD));
         return registryConfig;
     }
 
