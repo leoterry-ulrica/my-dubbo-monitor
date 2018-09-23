@@ -15,7 +15,7 @@ create table dubbo_invoke
   concurrent     number(11),
   max_elapsed    number(11),
   max_concurrent number(11)
-)
+);
 
 alter table dubbo_invoke add primary key(id);
 create index index_service on  dubbo_invoke(service);
