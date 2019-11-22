@@ -1,15 +1,15 @@
 #tag layout_block("mainContent")
 <section class="content-header">
   <h1>
-    Application consumers
-    <small>overview</small>
+    应用 使用者
+    <small>概览</small>
   </h1>
   <ol class="breadcrumb">
-    <li><a href=""><i class="fa fa-home"></i> Home</a></li>
-    <li><a href="applications"><i class="fa fa-cubes"></i> Applications</a></li>
+    <li><a href=""><i class="fa fa-home"></i> 首页</a></li>
+    <li><a href="applications"><i class="fa fa-cubes"></i> 应用</a></li>
     <li>${application}</li>
     <li class="active">
-      <a href="applications/providers?application=${application}">Providers</a> | Consumers | <a href="applications/dependencies?application=${application}">Depends On</a> | <a href="applications/dependencies?application=${application}&reverse=true">Used By</a>
+      <a href="applications/providers?application=${application}">提供者</a> | 使用者 | <a href="applications/dependencies?application=${application}">Depends On</a> | <a href="applications/dependencies?application=${application}&reverse=true">Used By</a>
     </li>
   </ol>
 </section>
@@ -21,11 +21,11 @@
     <div class="col-xs-12">
       <div class="box box-primary">
         <div class="box-header">
-          <h3 class="box-title">Lists of application consumer</h3>
+          <h3 class="box-title">应用使用者列表</h3>
 
           <div class="box-tools">
             <div class="input-group" style="width: 200px;">
-              <input type="text" name="table_search" class="form-control input-sm pull-right" placeholder="Consumer URL"/>
+              <input type="text" name="table_search" class="form-control input-sm pull-right" placeholder="使用者URL地址"/>
 
               <div class="input-group-btn">
                 <button class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
@@ -38,8 +38,8 @@
           <table class="table table-hover table-striped">
             <thead>
             <tr>
-              <th>Unregister</th>
-              <th>Consumer URL</th>
+              <th>未注册</th>
+              <th>使用者URL地址</th>
             </tr>
             </thead>
             <tbody>

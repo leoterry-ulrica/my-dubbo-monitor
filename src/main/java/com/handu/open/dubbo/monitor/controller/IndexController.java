@@ -101,12 +101,12 @@ public class IndexController {
             sdataList.add(data);
         }
         slineChartSeries.setData(sdataList);
-        slineChartSeries.setName("provider");
+        slineChartSeries.setName("提供者");
 
         successDubboInvokeLineChart.setxAxisCategories(sxAxisCategories);
         successDubboInvokeLineChart.setSeriesData(Arrays.asList(slineChartSeries));
         successDubboInvokeLineChart.setChartType("SUCCESS");
-        successDubboInvokeLineChart.setTitle("The Top 20 of Invoke Success");
+        successDubboInvokeLineChart.setTitle("前20个成功请求"); // The Top 20 of Invoke Success
         successDubboInvokeLineChart.setyAxisTitle("t");
         dubboInvokeLineChartList.add(successDubboInvokeLineChart);
 
@@ -121,12 +121,12 @@ public class IndexController {
             fdataList.add(data);
         }
         flineChartSeries.setData(fdataList);
-        flineChartSeries.setName("provider");
+        flineChartSeries.setName("提供者");
 
         failureDubboInvokeLineChart.setxAxisCategories(fxAxisCategories);
         failureDubboInvokeLineChart.setSeriesData(Arrays.asList(flineChartSeries));
         failureDubboInvokeLineChart.setChartType("FAILURE");
-        failureDubboInvokeLineChart.setTitle("The Top 20 of Invoke Failure");
+        failureDubboInvokeLineChart.setTitle("前20个失败请求"); // The Top 20 of Invoke Failure
         failureDubboInvokeLineChart.setyAxisTitle("t");
         dubboInvokeLineChartList.add(failureDubboInvokeLineChart);
 
