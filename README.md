@@ -35,6 +35,11 @@ Dubbo Monitor是针对Dubbo开发的监控系统，基于dubbo-monitor-simple改
   </dependency>
  ```
  
+ >### 2019-11-22
+>
+> 1. 汉化版本。
+
+ 
 >2. 升级pom.xml依赖的dubbo版本：
    从dubbo.version：[2.8.4]升级为[3.0.1]（dubbos的版本）
 
