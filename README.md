@@ -91,7 +91,7 @@ target文件夹下生成的dubbo-monitor.war即为项目部署文件，将其放
 
 ## 服务提供端配置
 
-[Dubbo服务提供端监控配置](http://dubbo.io/User+Guide-zh.htm#UserGuide-zh-%3Cdubbo%3Amonitor%2F%3E)
+[Dubbo服务提供端监控配置](http://dubbo.apache.org/documentations/3.0/zh-cn/site/user/references/xml/dubbo-monitor/)
 
 ## 注意事项
 >### 2016-04-25
