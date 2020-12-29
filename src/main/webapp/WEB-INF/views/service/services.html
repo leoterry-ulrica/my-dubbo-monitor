@@ -35,6 +35,7 @@
             <thead>
             <tr>
               <th>服务名称</th>
+              <th>服务别名</th>
               <th>应用</th>
               <th>所有者</th>
               <th>提供者</th>
@@ -47,6 +48,13 @@
             #for (row : rows)
             <tr>
               <td>${row.name}</td>
+              <td>
+                #if (row.name == "com.alibaba.dubbo.monitor.MonitorService")
+                <span>监控服务</span>
+                #elseif (row.name == "com.dist.xdata.sbds.api.StatisticsService")
+                <span>用地统计服务</span>
+                #end
+              </td>
               <td>${row.application}</td>
               <td>${row.owner} #if (row.organization) [${row.organization}] #end</td>
               <td>
