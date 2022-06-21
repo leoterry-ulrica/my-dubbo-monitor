@@ -26,7 +26,7 @@
         <jetbrick-template.version>2.0.10</jetbrick-template.version>
         <mybatis.version>3.2.7</mybatis.version>
         <mybatis-spring.version>1.2.2</mybatis-spring.version>
-        <mysql.version>5.1.30</mysql.version>
+        <mysql.version>8.0.28</mysql.version>
         <druid.version>1.0.14</druid.version>
         <jackson.version>2.3.3</jackson.version>
         <junit.version>4.11</junit.version>
